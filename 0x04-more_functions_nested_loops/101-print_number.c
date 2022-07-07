@@ -9,12 +9,12 @@
   */
 void print_number(int n)
 {
-	unsigned int b = i;
+	unsigned int b = n;
 
-	if (i < 0)
+	if (n < 0)
 	{
-		i *= -1;
-		b = i;
+		n *= -1;
+		b = n;
 		_putchar('-');
 	}
 
@@ -23,6 +23,6 @@ void print_number(int n)
 	if (b != 0)
 		print_number(b);
 
-	_putchar((unsigned int) i % 10 + '0');
+	_putchar((unsigned int) n % 10 + '0');
 
 }
