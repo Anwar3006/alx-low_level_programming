@@ -1,10 +1,12 @@
 #include "main.h"
 
 /**
- * print_most_numbers - print integers from 0 to 9 excluding 2 and 4
- *
- * Return: integers from excluding 2 and 4
- */
+  * print_most_numbers - Print the numbers since 0 up to 9
+  *
+  * Description: Prints the numbers excluding 2 and 4
+  *
+  * Return: The numbers since 0 up to 9
+  */
 
 void print_most_numbers(void)
 {
