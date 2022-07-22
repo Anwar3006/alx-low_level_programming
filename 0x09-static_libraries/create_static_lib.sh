@@ -1,4 +1,4 @@
 #!/bin/bash
-gcc -c main.h
-ar rc libmy.a main.o
-ranlib libmy.a
+gcc -c *.c
+ar rc liball.a *.o
+ranlib liball.a
