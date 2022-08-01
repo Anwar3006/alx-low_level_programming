@@ -1,9 +1,5 @@
-#ifndef PI_H
-#define PI_H
-
-/**
- * Header file that defines a macro named PI as an abbreviation for the token 3.14159265359.
- */
+#ifndef _HEADER_
+#define _HEADER_
 
 #define PI 3.14159265359
 
