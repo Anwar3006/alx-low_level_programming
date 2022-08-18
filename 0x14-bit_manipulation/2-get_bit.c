@@ -1,33 +1,19 @@
 #include <main.h>
 
 /**
-* get_bit - Gets the value of a bit at a given index.
-* @n: The bit.
-* @index: The index to get the value at - indices start at 0.
-*
-* Return: If an error occurs - -1.
-*/
-
+ * get_bit - Returns a value at a given index
+ * @n: Number to check the value of
+ * @index: The index to look for the number
+ * Return: A value at a given index or -1 if an error occours
+ */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int comp_i = 0;
+	unsigned int i;
 
-	while (n)
-	{
-		if (comp_i == index)
-		{
-			if (n % 2)
-				return (1);
-			else
-				return (0);
-		}
-
-		n = n / 2;
-		comp_i++;
-	}
-
-	if (index > comp_i && index < 63)
-		return (0);
-
-	return (-1);
+	if (index > (sizeof(8) * 8))
+		return (-1);
+	/*iterating number to the right index*/
+	for (i = 0; i < index; i++)
+		n = n >> 1;
+	return ((n & 1));
 }
