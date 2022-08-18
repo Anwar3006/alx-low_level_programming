@@ -13,6 +13,11 @@ unsigned int binary_to_uint(const char *b)
     int rem, bin;
     b = &dex;
 
+    if (b == NULL)
+    {
+        return (0);
+    }
+
     while (bin != 0)
     {
         rem = bin % 10;
