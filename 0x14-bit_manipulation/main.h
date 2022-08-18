@@ -1,5 +1,7 @@
 #ifndef BITMAN_
 #define BITMAN_
+#include <stdio.h>
+#include <stdlib.h>
 
 unsigned int binary_to_uint(const char *b);
 int _strlen(const char *s);
