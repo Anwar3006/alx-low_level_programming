@@ -9,21 +9,23 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-    unsigned int dex = 0, weight = 1;
-    int rem, bin;
-    b = &dex;
+	unsigned int num = 0, mult = 1;
+	int len;
 
-    if (b == NULL)
-    {
-        return (0);
-    }
+	if (b == '\0')
+		return (0);
 
-    while (bin != 0)
-    {
-        rem = bin % 10;
-        dex = dex + rem * weight;
-        bin = bin / 10;
-        weight = weight * 2;
-    }
-    return (dex);
+	for (len = 0; b[len];)
+		len++;
+
+	for (len -= 1; len >= 0; len--)
+	{
+		if (b[len] != '0' && b[len] != '1')
+			return (0);
+
+		num += (b[len] - '0') * mult;
+		mult *= 2;
+	}
+
+	return (num);
 }
