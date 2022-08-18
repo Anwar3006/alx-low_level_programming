@@ -4,7 +4,7 @@
  * binary_to_uint - Convert binary value to unsigned int value
  * @b: Pointer to string of char 0 and 1
  * 
- * Return: Value in Base 10
+ * Return: Value in Decimal
  */
 
 unsigned int binary_to_uint(const char *b)
