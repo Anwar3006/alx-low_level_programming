@@ -1,9 +1,8 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * binary_to_uint - Convert binary value to unsigned int value
  * @b: Pointer to string of char 0 and 1
- * 
  * Return: Value in Decimal
  */
 
@@ -13,9 +12,9 @@ unsigned int binary_to_uint(const char *b)
 
 	if (b == NULL)
     {
-		return (0);
+	return (0);
     }
-	len = _strlen(b);
+len = _strlen(b);
 	while (len--)
 	{
 		if (b[len] != 48 && b[len] != 49)
@@ -26,10 +25,10 @@ unsigned int binary_to_uint(const char *b)
         {
 			sum += 1 << count;
         }
-		count++;
+	count++;
 	}
 
-	return (sum);
+return (sum);
 }
 
 /**
