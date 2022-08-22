@@ -7,44 +7,26 @@
  * Return: The actual number of letters it could read and print.
  */
 
-ssize_t read_textfile(const char *filename, size_t letters)
+int create_file(const char *filename, char *text_content)
 {
-	int fd;
-	int i;
-	int read_letters;
-	char *buf;
+	int o, w, len = 0;
 
 	if (filename == NULL)
-		return (0);
-	buf = malloc(sizeof(char) * letters);
-	if (buf == NULL)
-		return (0);
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
+		return (-1);
+
+	if (text_content != NULL)
 	{
-		free(buf);
-		return (0);
+		for (len = 0; text_content[len];)
+			len++;
 	}
 
-	read_letters = read(fd, buf, letters);
-	if (read_letters == -1)
-	{
-		close(fd);
-		free(buf);
-		return (0);
-	}
+	o = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	w = write(o, text_content, len);
 
-	for (i = 0; i < read_letters; i++)
-	{
-		if (write(STDOUT_FILENO, &buf[i], 1) == -1)
-		{
-			close(fd);
-			free(buf);
-			return (0);
-		}
+	if (o == -1 || w == -1)
+		return (-1);
 
-	}
-	close(fd);
-	free(buf);
-	return (read_letters);
+	close(o);
+
+	return (1);
 }
