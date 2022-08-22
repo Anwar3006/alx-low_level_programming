@@ -1,5 +1,6 @@
-#ifndef FILES_
-#define FILES_
+#ifndef FILES
+#define FILES
+
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcnt1.h>
