@@ -12,11 +12,8 @@ size_t dlistint_len(const dlistint_t *h)
 
     while (h)
     {
-        if (h->n == NULL)
-            printf("Empty list\n");
-        else
-            h = h->next;
-            len++;
+        h = h->next;
+        len++;
     }
     return (len);
 }
