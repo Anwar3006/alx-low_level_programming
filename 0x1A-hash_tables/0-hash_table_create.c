@@ -21,7 +21,7 @@ hash_table_t *hash_table_create(unsigned long int size)
         return NULL;
 
    /* set each array pointer created to NULL */
-   int i;
+   unsigned int i;
    for (i = 0; i < size; i++)
    {
     hashtable->array[i] = NULL;
