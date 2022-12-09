@@ -9,11 +9,13 @@ all: $(OBJ)
 	$(CC) $(OBJ) -o school
 
 clean:
-	$(RM) *~ $(NAME)
+	${RM} *~ ${NAME}
 
 oclean:
-	$(RM) $(OBJ)
+	${RM} ${OBJ}
 
 fclean: clean oclean
 
 re: fclean all
+
+.PHONY: clean oclean fclean re
