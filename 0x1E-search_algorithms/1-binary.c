@@ -28,6 +28,7 @@ int binary_search(int *array, size_t size, int value)
  *
  * Return: The first index where value is located
  */
+
 int binary_search_wrapper(int *array, int value, size_t firstIndex, size_t lastIndex)
 {
 	size_t midIndex = (firstIndex + lastIndex) / 2;
