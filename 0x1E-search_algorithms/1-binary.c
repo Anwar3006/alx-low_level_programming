@@ -1,5 +1,6 @@
 #include "search_algos.h"
 
+int binary_search_wrapper(int *array, int value, size_t firstIndex, size_t lastIndex);
 /**
  * binary_search - Implements Binary search to locate elements of an array
  *
