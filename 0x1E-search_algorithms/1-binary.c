@@ -10,10 +10,10 @@
  * Return: Index of found value or -1 if not found
  */
 
-int binary_search(int *array, int size, int value)
+int binary_search(int *array, size_t size, int value)
 {
-	int firstIndex = 0;
-	int lastIndex = size - 1;
+	size_t firstIndex = 0;
+	size_t lastIndex = size - 1;
 
 	return (binary_search_wrapper(array, value, firstIndex, lastIndex));
 }
@@ -26,14 +26,16 @@ int binary_search(int *array, int size, int value)
  * @lastIndex:  As name suggests
  * @value: Value to search
  *
- * Return: int
+ * Return: The first index where value is located
  */
-int binary_search_wrapper(int *array, int value, int firstIndex, int lastIndex)
+int binary_search_wrapper(int *array, int value, size_t firstIndex, size_t lastIndex)
 {
-	int midIndex = (firstIndex + lastIndex) / 2;
+	size_t midIndex = (firstIndex + lastIndex) / 2;
 
 	printf("Searching in array: ");
-	for (int i = firstIndex; i <= lastIndex; i++)
+
+	size_t i;
+	for (i = firstIndex; i <= lastIndex; i++)
 	{
 		printf("%d ", array[i]);
 	}
